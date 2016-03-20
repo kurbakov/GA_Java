@@ -14,12 +14,13 @@ public class main_class {
 		int cross_type 	= 1;
 		double survive	= .2; 
 		
-		/*comment!!!*/
+		/*Build the class!*/
 		ga_binary ga_bin = new ga_binary(len, pop , m_prob , cross_type, survive);
 		
-		/*comment!!!*/
+		/*create initial genome!*/
 		ga_bin.buid_genome();
 		
+		/*used to call evaluation function!*/
 		main_class m = new main_class();
 		
 		for(int k1 = 0; k1<gen; k1++)
@@ -38,9 +39,9 @@ public class main_class {
 			
 			ga_bin.best_score();
 			ga_bin.best_genome();
-			//ga_bin.selection();
+			ga_bin.selection();
 			ga_bin.mutation();
-			//ga_bin.crossover(1);
+			ga_bin.crossover();
 			
 		}
 		
@@ -48,7 +49,7 @@ public class main_class {
 
 	}
 
-	/*comment!!!*/
+	/*evaluation function can be modified based on your need!*/
 	public int evaluation_function(int[] genome)
 	{
 		int res = 0;
